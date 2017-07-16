@@ -1,0 +1,13 @@
+{
+  "name": "myMovieDataBase",
+  "description": "A movie database app in Angular",
+  "version": "0.0.1",
+  "repository": "https://github.com/akar444/myMovieDataBase",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "bootstrap": "3.3.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x"
+  }
+}

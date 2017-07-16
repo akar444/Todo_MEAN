@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" ng-app="toDoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="build/app.min.css" />
+  </head>
+  <body>
+
+
+<div ng-class="{'not-signed-in': !isLoggedIn(), 'container-fluid':true}" ng-controller="ToDoAppController">
+    <header></header>
+    <add-todo></add-todo>
+    <div ng-view></div>
+</div>
+
+  <script src="build/app.js"></script>
+  </body>
+</html>

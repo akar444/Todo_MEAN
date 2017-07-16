@@ -1,0 +1,31 @@
+<div class="header" ng-mouseleave="hidePopover($event)">
+  <h2 ng-class="{'cursor-pointer': isLoggedIn()}" ng-click="goToTodos()">ToDo</h2>
+  <div ng-show="showActions()" class="actions-holder">
+    <div class="search-task">
+      <input type="text" placeholder="Search task..." ng-model="fields.searchQuery" ng-blur="closeSearh($event)">
+      <span class="search" ng-click="openSearch($event)"><img src="public/images/search-icon.png" /></span>
+    </div>
+    <div class="dropdown filter-tasks">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="filter-name">{{filters[fields.activeFilter]}}</span>
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" ng-click="setActiveFilter($event)">
+        <li><a href="javascript:;" class="filter" data-filter="SHOW_ALL">All</a></li>
+        <li class="active"><a href="javascript:;" class="filter" data-filter="SHOW_ACTIVE">Active</a></li>
+        <li><a href="javascript:;" class="filter" data-filter="SHOW_COMPLETED">Completed</a></li>
+      </ul>
+    </div>
+    <button class="add-task" data-toggle="modal" data-target="#add-task-modal"><span>+</span> Add</button>
+  </div>
+  <div ng-if="isLoggedIn()" class="user-account pull-right">
+      <user-avatar></user-avatar>
+      <ul class="pop-over-wrapper">
+        <li class="item faded-item" ng-click="hidePopover($event)"><a class="" href='#/profile'>Profile</a></li>
+        <li class="item faded-item" ng-click="logout()"><a class="" href='javascript:;'>Logout</a></li>
+      </ul>
+  </div>
+  <div ng-if="!isLoggedIn()" class="actions-holder pull-right">
+    <button class="sign-up-in" ng-click="accountNav($event)">Sign up</button>
+  </div>
+</div>

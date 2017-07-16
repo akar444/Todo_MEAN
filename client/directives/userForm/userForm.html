@@ -1,0 +1,19 @@
+<div class="form-group">
+    <input name="fName" type="text" placeholder="First name" class="form-control" ng-model="user.fName" ng-blur="validateFormField($event)" autofocus required>
+    <span class="help-block pull-right">{{errors.fName}}</span>
+</div>
+<div class="form-group">
+    <input name="lName" type="text" placeholder="Last name" class="form-control" ng-model="user.lName">
+</div>
+<div class="form-group">
+    <input name="email" type="email" placeholder="Email" class="form-control" ng-model="user.email" ng-blur="validateFormField($event)" required>
+    <span class="help-block pull-right">{{errors.email}}</span>
+</div>
+<div class="form-group">
+    <input name="password" type="password" placeholder="Password" class="form-control" ng-model="user.password" ng-blur="validateFormField($event)" required>
+    <span class="help-block pull-right">{{errors.password}}</span>
+</div>
+<div class="form-group">
+    <input name="cPassword" type="password" placeholder="Confirm password" class="form-control" ng-model="user.cPassword" ng-blur="validateFormField($event)" required>
+    <span class="help-block pull-right">{{errors.cPassword}}</span>
+</div>

@@ -1,0 +1,13 @@
+<div class="todos">
+	<div class="todo" data-todoid="todo._id" ng-repeat="todo in showTodos() | filter: fields.searchQuery">
+		<div ng-if="todo.completed" class="completed"><span><img src="public/images/check-icon.png" /></span></div>
+		<div class="task-description">
+			<h2 class="controlled-text" title={{todo.text}}>{{todo.text}}</h2>
+			<p class="controlled-text" title={{todo.desc}}>{{todo.desc}}</p>
+		</div>
+		<div class="task-actions">
+			<button class="action remove-todo" ng-click="deleteTodo(todo._id)">Delete</button>
+			<button ng-hide="todo.completed" class="action complete-todo" ng-click="completeTodo(todo._id)">Complete</button>
+		</div>
+	</div>
+</div>
