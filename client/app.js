@@ -5,15 +5,16 @@ angular.module('toDoApp', [
 		searchQuery:'',
 		activeFilter: 'SHOW_ACTIVE'
 	};
+	$scope.loginOrRegister = $location.path() === '/login' ? 'Sign up' : 'Sign in';
 	$scope.isLoggedIn = function() {
 		return User.currentUser() && true;
 	};
 	$scope.accountNav = function(event) {
 		if($location.path() === '/login') {
-			$(event.currentTarget).text('Sign in');
+			$scope.loginOrRegister = 'Sign in';
 			$location.path('/signup');
 		} else {
-			$(event.currentTarget).text('Sign up');
+			$scope.loginOrRegister = 'Sign up';
 			$location.path('/login');
 		}
 	};
